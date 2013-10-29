@@ -1,0 +1,40 @@
+body {
+	background: gray;
+}
+
+div.page-wrapper {
+	margin: 0px auto;
+}
+
+div.site-header {
+	width: auto;
+	background-color: cornsilk;
+	font-family: Arial, sans-serif;
+	font-size: x-large;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+}
+
+div.site-menu {
+	width: 200px;
+	height: 500px;
+	float: left;
+	background-color:cornsilk;
+	font-family: Arial, sans-serif;
+	padding: 5px;
+	border-right-style: solid;
+	border-top-style: solid;
+	border-color: black;
+	border-width: 1px; 
+}
+
+div.site-body {
+	margin-left: 200px;
+	background-color:cornsilk;
+	font-family: Arial, sans-serif;
+	padding: 5px;
+	border-top-style: solid;
+	border-color: black;
+	border-width: 1px; 
+}
