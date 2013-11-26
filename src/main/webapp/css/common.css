@@ -39,16 +39,16 @@ div.site-header {
 	font-size: x-large;
 	font-weight: bold;
 	text-align: center;
-	padding: 5px;
+	padding: 15px;
 }
 
 div.site-menu {
 	width: 200px;
-	height: 500px;
+	height: 510px;
 	float: left;
 	background-color:cornsilk;
 	font-family: Arial, sans-serif;
-	padding: 5px;
+	padding: 15px;
 	border-right-style: solid;
 	border-top-style: solid;
 	border-color: black;
@@ -56,11 +56,34 @@ div.site-menu {
 }
 
 div.site-body {
-	margin-left: 200px;
+	margin-left: 231px;
+	height: 500px;
 	background-color:cornsilk;
 	font-family: Arial, sans-serif;
-	padding: 5px;
+	padding: 20px;
 	border-top-style: solid;
 	border-color: black;
 	border-width: 1px; 
+}
+
+div.results-block {
+	display: table;
+	border-collapse: collapse;
+}
+
+div.results-item {
+	display: table-row;
+}
+
+div.results-item-label {
+	background: silver;
+	display: table-cell;
+	padding: 4px;
+	border: 1px solid black;
+}
+
+div.results-item-value {
+	display: none;
+	padding: 4px;
+	border: 1px solid black;
 }

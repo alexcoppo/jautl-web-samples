@@ -45,23 +45,33 @@
 		<br>
 		<button id="doHash">Compute digest</button><br>
 		<br>
-		<label for="hashResult">Hash result:</label>
-		<input id="hashResult" size="64" readonly="readonly">
+		<div class="results-block">
+			<div class="results-item">
+				<div class="results-item-label">Hash result</div>
+				<div class="results-item-value" id="hashResult" style="max-width: 500px; word-wrap:break-word;"></div>
+			</div>
+		</div>
 	</div>
 	<div id="tabs-runBenchmak">
-		<label for="blockSize">Block size [b]:</label>
-		<input id="blockSize"><br>
-		<label for="runTime">Run time [s]:</label>
-		<input id="runTime"><br>
+		<label for="blockSize">Block size [b]:</label><input id="blockSize">
+		<label for="runTime">Run time [s]:</label><input id="runTime"><br>
 		<br>
 		<button id="doBenchmark">Run benchmark</button><br>
 		<br>
-		<label for="loopTime">Loop time [us]:</label>
-		<input id="loopTime" readonly="readonly"><br>
-		<label for="loopsPerSecond">Loops per second:</label>
-		<input id="loopsPerSecond" readonly="readonly"><br>
-		<label for="throughput">Throughput [b/s]:</label>
-		<input id="throughput" readonly="readonly"><br>
+		<div class="results-block">
+			<div class="results-item">
+				<div class="results-item-label">Loop time</div>
+				<div class="results-item-value" id="loopTime"></div>
+			</div>
+			<div class="results-item">
+				<div class="results-item-label">Loops per second</div>
+				<div class="results-item-value" id="loopsPerSecond"></div>
+			</div>
+			<div class="results-item">
+				<div class="results-item-label">Throughput</div>
+				<div class="results-item-value" id="throughput"></div>
+			</div>
+		</div>
 	</div>
 </div>
 
