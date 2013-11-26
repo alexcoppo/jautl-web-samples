@@ -63,7 +63,7 @@ var buildHashRequestUrl = function() {
 
 var buildBenchmarkRequestUrl = function() {
 	var engineName = $("#mdengineslist").val();
-	var blockSize = $("#blockSize").val();
+	var blockSize = $("#blockSize").val() || 0;
 	var runTime = $("#runTime").val();
 	
 	var requestUrl = JSPVARS.runBenchmarkUrl;
@@ -74,22 +74,29 @@ var buildBenchmarkRequestUrl = function() {
 	return requestUrl;
 };
 
+var displayResultItem = function(id, value) {
+	var container = $("#" + id);
+	
+	container.text(value);
+	container.css("display", "table-cell");
+};
+
 var doHashClicked = function() {
 	ajaxJsonRequest(
 		buildHashRequestUrl(),
 		function(data, textStatus, jqXHR) {
-			$("#hashResult").val(data.digestValue);
+			displayResultItem("hashResult", data.digestValue);
 		},
 		false
 	);
 };
 
 var doBenchmarkClicked = function() {
-	var blockSize = $("#blockSize").val();
+	var blockSize = $("#blockSize").val() || 0;
 	var runTime = $("#runTime").val();
 
-	if (blockSize < 1) {
-		alert("Wrong block size value, must be greater then 0");
+	if (blockSize < 0) {
+		alert("Wrong block size value, must be non negative");
 		return;
 	}
 	if (runTime <= 0) {
@@ -102,9 +109,9 @@ var doBenchmarkClicked = function() {
 	ajaxJsonRequest(
 		buildBenchmarkRequestUrl(),
 		function(data, textStatus, jqXHR) {
-			$("#loopTime").val(data.loopTime);
-			$("#loopsPerSecond").val(data.loopsPerSecond);
-			$("#throughput").val(data.throughput);
+			displayResultItem("loopTime", data.loopTime);
+			displayResultItem("loopsPerSecond", data.loopsPerSecond);
+			displayResultItem("throughput", data.throughput);
 		},
 		false
 	);
